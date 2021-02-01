@@ -24,7 +24,7 @@ services:
       - MYSQL_DBPORT=3306
       - MYSQL_DBUSER=root
       - MYSQL_DBPASS=secret
-      # - MYSQL_DBNAME=school
+      - MYSQL_DBNAME=school
     ports:
       - 8080:80
       - 8083:443
