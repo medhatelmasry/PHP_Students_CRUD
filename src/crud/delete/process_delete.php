@@ -39,8 +39,6 @@ if (isset($_POST['StudentId'])) {
         header('Location: ../list');
         exit;
     }
-} else {
-    # TODO without StudentId value causes errors
 }
 ?>
 
