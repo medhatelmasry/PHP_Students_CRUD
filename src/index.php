@@ -7,6 +7,7 @@
 <p><a href="./insert_sample_data">Insert Sample Student Data</a></p>
 <p><a href="./crud/list">List Students (CRUD)</a></p>
 <p><a href="./crud/injection/injection.php">SQL Injection Example</a></p>
+<p><a href="./global_search/global_search.php">Global Search</a></p>
 </div>
 
 <?php include("inc_footer.php"); ?>
