@@ -8,7 +8,7 @@ if (isset($_POST['Submit'])) {
     mysqli_select_db($conn, $db_name);
 
 $row = 1;
-if (($handle = fopen("../test.csv", "r")) !== FALSE) {
+if (($handle = fopen("../seed-data.csv", "r")) !== FALSE) {
     $data = fgetcsv($handle, 1000, ",");
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         
