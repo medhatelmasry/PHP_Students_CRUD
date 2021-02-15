@@ -5,22 +5,33 @@
 <?php
 if (isset($_POST['Submit'])) {
     include("../inc_db_params.php");
-    mysqli_select_db($conn, $db_name);
 
-    if ($conn !== FALSE) {
-        $SQLstring = "INSERT INTO Students (StudentId, FirstName, LastName, School) 
-        VALUES 
-        ('A00111111', 'Tom', 'Max', 'Science'),
-        ('A00222222', 'Ann', 'Fay', 'Mining'),
-        ('A00333333', 'Joe', 'Sun', 'Nursing'),
-        ('A00444444', 'Sue', 'Fox', 'Computing'),
-        ('A00555555', 'Ben', 'Ray', 'Mining')
-        ";
-        $QueryResult = mysqli_query($conn, $SQLstring);
-        $rowcount=mysqli_affected_rows($conn);
-        printf("<p>%d records were inserted.</p>\n", $rowcount);
+    $SQLstring = "INSERT INTO Students (StudentId, FirstName, LastName, School) 
+    VALUES 
+    ('A00111111', 'Tom', 'Max', 'Science'),
+    ('A00222222', 'Ann', 'Fay', 'Mining'),
+    ('A00333333', 'Joe', 'Sun', 'Nursing'),
+    ('A00444444', 'Sue', 'Fox', 'Computing'),
+    ('A00555555', 'Ben', 'Ray', 'Mining')
+    ";
 
-        $conn->close();
+    if ($using_mysql) {
+        mysqli_select_db($conn, $db_name);
+        
+        if ($conn !== FALSE) {
+            
+            $QueryResult = mysqli_query($conn, $SQLstring);
+            $rowcount=mysqli_affected_rows($conn);
+            printf("<p>%d records were inserted.</p>\n", $rowcount);
+
+            $conn->close();
+        }
+    } else {
+        $query = $db->exec($SQLstring);
+        
+        if ($query) {
+            printf("<p>%d records were inserted.</p>\n", $db->changes());
+        }
     }
 }
 ?>

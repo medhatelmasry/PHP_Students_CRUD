@@ -27,9 +27,12 @@ try {
         die("Connection failed: " . $conn->connect_error);
     } else {
         $using_mysql = true;
+        echo "\nMySQL Connected successfully";
     }
 } catch (Error $e) {
-	$db = new SQLite3('../school.db');
+	$db = new SQLite3('../../school.db');
+
+    echo "\nSQLite3 Connected successfully";
 }
 
 ?>

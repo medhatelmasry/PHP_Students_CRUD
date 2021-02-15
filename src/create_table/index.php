@@ -5,24 +5,31 @@
 <?php
 if (isset($_POST['Submit'])) {
     include("../inc_db_params.php");
-    // school db connection
 
-    /* change db to world db */
-    mysqli_select_db($conn, $db_name);
+    $SQLstring = "CREATE TABLE Students (
+        StudentId VARCHAR(10) NOT NULL,
+        FirstName VARCHAR(80),
+        LastName VARCHAR(80),
+        School VARCHAR(50),
+        PRIMARY KEY (StudentId)
+    );";
 
-    if ($conn !== FALSE) {
-        $SQLstring = "CREATE TABLE Students (
-            StudentId VARCHAR(10) NOT NULL,
-            FirstName VARCHAR(80),
-            LastName VARCHAR(80),
-            School VARCHAR(50),
-            PRIMARY KEY (StudentId)
-        );";
-        $QueryResult = @mysqli_query($conn, $SQLstring);
-        echo "\nsuccessfully created";
+    if ($using_mysql) {
+        // school db connection
+        /* change db to world db */
+        mysqli_select_db($conn, $db_name);
+
+        if ($conn !== FALSE) {
+            
+            $QueryResult = @mysqli_query($conn, $SQLstring);
+            echo "\nMySQL: table successfully created";
+        }
+
+        $conn->close();
+    } else {
+        $db->exec($SQLstring);
+        echo "\nSQLite3: table successfully created";
     }
-
-    $conn->close();
 }
 ?>
 <form action="/create_table/index.php" method="POST">

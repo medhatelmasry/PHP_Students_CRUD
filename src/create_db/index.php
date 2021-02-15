@@ -5,13 +5,18 @@
 <?php
 if (isset($_POST['Submit'])) {
     include("../inc_db_params.php");
-    if ($conn !== FALSE) {
-        $SQLstring = "CREATE DATABASE $db_name;";
-        $QueryResult = @mysqli_query($conn, $SQLstring);
-        echo "\nsuccessfully added";
-    };
 
-    mysqli_close($conn);
+    if ($using_mysql) {
+        if ($conn !== FALSE) {
+            $SQLstring = "CREATE DATABASE $db_name;";
+            $QueryResult = @mysqli_query($conn, $SQLstring);
+            echo "\nMySQL: successfully added";
+        };
+
+        mysqli_close($conn);
+    } else {
+        echo "\nSQLite3: successfully added";
+    }
 }
 ?>
 <form action="/create_db/index.php" method="POST">
