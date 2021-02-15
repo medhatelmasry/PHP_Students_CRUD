@@ -3,6 +3,7 @@
 <?php
 if (isset($_GET['id'])) {
     include("../../inc_db_params.php");
+    $ShowDiv = TRUE;
 
     /* change db to world db */
     mysqli_select_db($conn, $db_name);
@@ -29,8 +30,14 @@ if (isset($_GET['id'])) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 } else {
-    # TODO without query string causes errors
+    $ShowDiv = FALSE;
+    $StudentId = "";
+    $FirstName = "";
+    $LastName = "";
+    $School = "";
+    echo "<h4><br>The URL is invalid. An id parameter must be given.<h4>\n";
 }
+if ($ShowDiv) {
 ?>
 
 <h1>Update</h1>
@@ -71,6 +78,17 @@ if (isset($_GET['id'])) {
         </form>
     </div>
 </div>
+<?php
+}
+?>
+<?php
+if ($ShowDiv == FALSE) {
+?>
+<br>
+<a href="../list" class="btn btn-small btn-primary">&lt;&lt; BACK</a>
+<?php
+}
+?>
 
 <br />
 
