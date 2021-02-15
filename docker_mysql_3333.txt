@@ -1,0 +1,1 @@
+docker run -p 3333:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=secret -d mysql:8.0.0

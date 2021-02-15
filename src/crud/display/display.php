@@ -5,6 +5,7 @@
 <?php
 if (isset($_GET['id'])) {
     include("../../inc_db_params.php");
+    $ShowTable = TRUE;
 
     /* change db to world db */
     mysqli_select_db($conn, $db_name);
@@ -32,8 +33,14 @@ if (isset($_GET['id'])) {
     
     mysqli_close($conn);
 } else {
-    # TODO without query string causes errors
+    $ShowTable = FALSE;
+    $StudentId = "";
+    $FirstName = "";
+    $LastName = "";
+    $School = "";
+    echo "<h4><br>The URL is invalid. An id parameter must be given.<h4>\n";
 }
+if ($ShowTable) {
 ?>
 
 <table>
@@ -54,7 +61,9 @@ if (isset($_GET['id'])) {
         <td><?php echo $School ?></td>
     </tr>
 </table>
-
+<?php
+}
+?>
 <br />
 <a href="../list" class="btn btn-small btn-primary">&lt;&lt; BACK</a>
 
