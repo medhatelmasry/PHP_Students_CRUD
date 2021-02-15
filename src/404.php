@@ -5,3 +5,5 @@
 ?>
 
 <a href="/" class="btn btn-small btn-primary">&lt;&lt; BACK</a>
+
+<?php include("inc_footer.php"); ?>
