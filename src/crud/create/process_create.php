@@ -47,7 +47,7 @@ if (isset($_POST['create'])) {
         # Make sure that length of string does not exceed schema for column 
 
         $sql = "";
-        $sql .= "INSERT INTO Students (StudentId, FirstName, LastName, School) VALUES ";
+        $sql .= "INSERT IGNORE INTO Students (StudentId, FirstName, LastName, School) VALUES ";
         $sql .= "(?, ?, ?, ?)";
 
         /* create a prepared statement */
