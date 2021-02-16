@@ -68,11 +68,8 @@ if ($conn !== FALSE) {
 
    mysqli_close($conn);
 }
-
-
-
 ?>
-?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
