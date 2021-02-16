@@ -36,12 +36,12 @@ if (isset($_POST['StudentId'])) {
         mysqli_close($conn);
     } else {
         $prepared_stmt = $db->prepare("DELETE FROM Students WHERE StudentId=?");
-        $id = $_Post['StudentId'];
+        $id = $_POST['StudentId'];
         $prepared_stmt->bindParam(1, $id);
 
         $exec = $prepared_stmt->execute();
 
-        if ($exec === false) {
+        if ($exec == false) {
             error_log("SQLite3 execute() failed: ");
             error_log(print_r(htmlspecialchars($prepared_stmt->lastErrorMsg())));
         }
