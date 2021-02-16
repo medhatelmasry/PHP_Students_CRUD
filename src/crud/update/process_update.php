@@ -41,8 +41,8 @@ if (isset($_POST['update'])) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 
-    if ($exec === true) {
-        header('Location: ../list');
-        exit;
-    }
+?>
+    <?php include("../../inc_to_list.php"); ?>
+<?php
 }
+?>

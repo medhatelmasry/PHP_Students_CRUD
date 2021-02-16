@@ -17,8 +17,8 @@ if ($conn !== FALSE) {
         echo "<tr><th>Student ID</th>".
              "<th>First Name</th>".
              "<th>Last Name</th>".
-             "<th>School</th>\n";
-             "<th>&nbsp;</th></tr>\n";
+             "<th>School</th>".
+             "<th>CRUD</th></tr>\n";
         while ($Row = mysqli_fetch_array($QueryResult, MYSQLI_NUM)) {
              echo "<tr><td>{$Row[0]}</td>";
              echo "<td>{$Row[1]}</td>";

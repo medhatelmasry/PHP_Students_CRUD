@@ -40,10 +40,8 @@ if (isset($_POST['create'])) {
     };
 
     mysqli_close($conn);
-
-    if ($exec === true) {
-        # redirect to the page that displays a list of students
-        header('Location: ../list');
-        exit;
-    }
+    
+?>
+    <?php include("../../inc_to_list.php"); ?>
+<?php
 }
