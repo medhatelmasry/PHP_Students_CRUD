@@ -1,7 +1,3 @@
-<?php include("../../inc_header.php"); ?>
-
-<h1>Process Delete Student</h1>
-
 <?php
 if (isset($_POST['StudentId'])) {
     include("../../inc_db_params.php");
@@ -39,3 +35,4 @@ if (isset($_POST['StudentId'])) {
     # TODO without StudentId value causes errors
 }
 include("../../inc_footer.php");
+?>

@@ -20,7 +20,6 @@ $conn = mysqli_connect("$db_host:$db_port", $db_user, $db_pass);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-//echo "Connected successfully";
 
 
 ?>
