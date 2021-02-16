@@ -34,13 +34,8 @@ if (isset($_POST['StudentId'])) {
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-
-?>
-    <?php include("../../inc_to_list.php"); ?>
-<?php
+    include("../../inc_to_list.php");
 } else {
     # TODO without StudentId value causes errors
 }
-?>
-
-<?php include("../../inc_footer.php"); ?>
+include("../../inc_footer.php");

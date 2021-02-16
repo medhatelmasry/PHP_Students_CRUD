@@ -1,3 +1,5 @@
+<?php include("../../inc_header.php"); ?>
+
 <?php
 if (isset($_POST['create'])) {
 
@@ -40,8 +42,7 @@ if (isset($_POST['create'])) {
     };
 
     mysqli_close($conn);
-    
-?>
-    <?php include("../../inc_to_list.php"); ?>
-<?php
+    include("../../inc_to_list.php");
 }
+include("../../inc_footer.php");
+?>
