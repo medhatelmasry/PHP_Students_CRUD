@@ -83,11 +83,8 @@ window.onload = function() {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title: {
-		text: "Usage Share of Desktop Browsers"
+		text: "Number of students in each Department"
 	},
-	subtitles: [{
-		text: "November 2017"
-	}],
 	data: [{
 		type: "pie",
 		yValueFormatString: "#,##0.00\"\"",
