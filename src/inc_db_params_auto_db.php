@@ -29,7 +29,7 @@ try {
         $using_mysql = true;
     }
 } catch (Error $e) {
-	$db = new SQLite3('../school.db');
+	$db = new SQLite3('./school.db');
 }
 
 ?>
