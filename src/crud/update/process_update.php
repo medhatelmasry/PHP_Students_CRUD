@@ -1,3 +1,5 @@
+<?php include("../../inc_header.php"); ?>
+
 <?php
 if (isset($_POST['update'])) {
 
@@ -65,9 +67,7 @@ if (isset($_POST['update'])) {
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-
-    if ($exec === true) {
-        header('Location: ../list');
-        exit;
-    }
+    include("../../inc_to_list.php");
 }
+include("../../inc_footer.php");
+?>

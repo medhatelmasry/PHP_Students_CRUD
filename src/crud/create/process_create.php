@@ -1,3 +1,5 @@
+<?php include("../../inc_header.php"); ?>
+
 <?php
 if (isset($_POST['create'])) {
 
@@ -68,10 +70,7 @@ if (isset($_POST['create'])) {
     };
 
     mysqli_close($conn);
-
-    if ($exec === true) {
-        # redirect to the page that displays a list of students
-        header('Location: ../list');
-        exit;
-    }
+    include("../../inc_to_list.php");
 }
+include("../../inc_footer.php");
+?>

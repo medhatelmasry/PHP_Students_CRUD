@@ -30,10 +30,9 @@ if (isset($_POST['StudentId'])) {
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-
-    if ($exec === true) {
-        header('Location: ../list');
-        exit;
-    }
+    include("../../inc_to_list.php");
+} else {
+    # TODO without StudentId value causes errors
 }
+include("../../inc_footer.php");
 ?>
