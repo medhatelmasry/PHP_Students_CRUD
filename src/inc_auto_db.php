@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', '1');
 // this is a combination of AUTO db, table creation and data insertion
 include("./inc_db_params.php");
 // checks connection
