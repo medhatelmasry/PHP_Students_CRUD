@@ -6,7 +6,7 @@ getenv('MYSQL_DBUSER') ? $db_user=getenv('MYSQL_DBUSER') : $db_user="root";
 getenv('MYSQL_DBPASS') ? $db_pass=getenv('MYSQL_DBPASS') : $db_pass="secret";
 getenv('MYSQL_DBNAME') ? $db_name=getenv('MYSQL_DBNAME') : $db_name="";
 
-if (strlen( $db_name ) === 0) {
+if (empty( $db_name )) {
     $conn = new mysqli("$db_host:$db_port", $db_user, $db_pass);
     $db_name = "school";
 } else {

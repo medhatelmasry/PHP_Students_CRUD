@@ -46,10 +46,9 @@ if ($conn !== FALSE) {
                 $lastName = mysqli_real_escape_string($conn, $data[2]);
                 $school = mysqli_real_escape_string($conn, $data[3]);
         
-                $SQLstring = "INSERT INTO Students (StudentId, FirstName, LastName, School) 
-                VALUES 
-                ('$id', '$firstName', '$lastName', '$school')
-                ";
+                $SQLstring = "INSERT INTO Students (StudentId, FirstName, LastName, School)";
+                $SQLstring .= " VALUES "; 
+                $SQLstring .= " ('$id', '$firstName', '$lastName', '$school')";
                 $QueryResult = mysqli_query($conn, $SQLstring);
                 echo $SQLstring;
                 $rowcount=mysqli_affected_rows($conn);
